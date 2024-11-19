@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-    <title>Projeto Gerenciamento Alunos</title>
+    <title>Clicica Coelho</title>
     <meta name="author" content="Julius Cavalcante">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
@@ -15,16 +15,13 @@
         <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 
         <div class="container">
-        <h3>Últimos Alunos Adicionados</h3>
+        <h3>Últimos Usuários Adicionados</h3>
         <hr>
 
         <table class="table table-bordered table-hover">
 
         <thead>
             <th scope="col">Nome</th>
-            <th scope="col">Curso</th>
-            <th scope="col">Matricula</th>
-            <th scope="col">Status</th>
             <th scope="col">Turno</th>
             <th scope="col">Ação</th>
 
@@ -33,9 +30,6 @@
             <tr scope="row" th:each="alunos : ${alunosAtivos}">
 
                 <td th:text="${alunos.nome}"></td>
-                <td th:text="${alunos.curso}"></td>
-                <td th:text="${alunos.matricula}"></td>
-                <td th:text="${alunos.status}"></td>
                 <td th:text="${alunos.turno}"></td>
                 <td>
                  <a class="btn btn-primary" th:href="@{editar/{id}(id=${alunos.id})}">
